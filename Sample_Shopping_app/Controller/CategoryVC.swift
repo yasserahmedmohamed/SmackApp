@@ -9,19 +9,30 @@
 import UIKit
 
 class CategoryVC: UIViewController, UITableViewDataSource , UITableViewDelegate {
+    let Categories=DataService.inestance.getcategories()
     
+    @IBOutlet weak var CategoryTableView: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+      return  Categories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        if let cell=tableView.dequeueReusableCell(withIdentifier: "tableviewcellidnty") as?
+            CategoryCell
+        {
+           cell.setValues(Forname: Categories[indexPath.row].categoryname, forimage: Categories[indexPath.row].categoryimage)
+            return cell
+        }
+        return CategoryCell()
     }
     
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        CategoryTableView.dataSource=self
+        CategoryTableView.delegate=self
         // Do any additional setup after loading the view, typically from a nib.
     }
 
