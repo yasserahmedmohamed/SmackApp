@@ -39,6 +39,7 @@ class CategoryCell: UITableViewCell {
         let motingroub=UIMotionEffectGroup()
         motingroub.motionEffects=[x,y]
         CategoryImage.addMotionEffect(motingroub)
+        
     }
 
 }

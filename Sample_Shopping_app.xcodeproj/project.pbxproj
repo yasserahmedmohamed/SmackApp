@@ -15,6 +15,9 @@
 		09311E40225CD82A00E44A1E /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09311E3F225CD82A00E44A1E /* CategoryCell.swift */; };
 		09311E42225CD9B100E44A1E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09311E41225CD9B100E44A1E /* Category.swift */; };
 		09311E45225CDF7E00E44A1E /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09311E44225CDF7E00E44A1E /* DataService.swift */; };
+		09F46193225DE5E6002F2CD1 /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F46192225DE5E6002F2CD1 /* ProductsVC.swift */; };
+		09F46195225DEA07002F2CD1 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F46194225DEA07002F2CD1 /* ProductCell.swift */; };
+		09F46197225DEB0E002F2CD1 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F46196225DEB0E002F2CD1 /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		09311E3F225CD82A00E44A1E /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		09311E41225CD9B100E44A1E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		09311E44225CDF7E00E44A1E /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		09F46192225DE5E6002F2CD1 /* ProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsVC.swift; sourceTree = "<group>"; };
+		09F46194225DEA07002F2CD1 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		09F46196225DEB0E002F2CD1 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				09311E41225CD9B100E44A1E /* Category.swift */,
+				09F46196225DEB0E002F2CD1 /* Product.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -85,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				09311E3F225CD82A00E44A1E /* CategoryCell.swift */,
+				09F46194225DEA07002F2CD1 /* ProductCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -93,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				09311E2C225CD43F00E44A1E /* CategoryVC.swift */,
+				09F46192225DE5E6002F2CD1 /* ProductsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,9 +186,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				09311E2D225CD43F00E44A1E /* CategoryVC.swift in Sources */,
+				09F46197225DEB0E002F2CD1 /* Product.swift in Sources */,
 				09311E2B225CD43F00E44A1E /* AppDelegate.swift in Sources */,
+				09F46193225DE5E6002F2CD1 /* ProductsVC.swift in Sources */,
 				09311E40225CD82A00E44A1E /* CategoryCell.swift in Sources */,
 				09311E42225CD9B100E44A1E /* Category.swift in Sources */,
+				09F46195225DEA07002F2CD1 /* ProductCell.swift in Sources */,
 				09311E45225CDF7E00E44A1E /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
