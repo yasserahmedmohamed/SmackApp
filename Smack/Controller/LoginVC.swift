@@ -24,6 +24,7 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func DontHaveAccountTapped(_ sender: Any) {
+        performSegue(withIdentifier: create_account, sender: nil)
     }
     
 }
