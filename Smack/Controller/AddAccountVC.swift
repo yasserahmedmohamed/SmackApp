@@ -15,6 +15,10 @@ class AddAccountVC: UIViewController {
     @IBOutlet weak var Passwordtxt: UITextField!
     @IBOutlet weak var Emailtxt: UITextField!
     @IBOutlet weak var UserImg: UIImageView!
+    
+    //variables
+    var avatarname = "profileDefault"
+    var avatarcolor = "[0.5,0.5,0.5,1]"
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,13 +39,23 @@ class AddAccountVC: UIViewController {
         {
             return
         }
+        guard let name = UserNameTxt.text ,Emailtxt.text != "" else
+        {
+            return
+        }
         AuthService.instance.registerUser(email: email, password: password) { (success) in
             if (success)
             {
                 AuthService.instance.LoginUSer(foremail: email, forpassowrd: password, copmlition: { (success) in
                     if(success)
                     {
-                        print("logged in ", AuthService.instance.authtoken )
+                        AuthService.instance.createUSer(name: name, email: email, avatarname: self.avatarname, avatarcolor: self.avatarcolor, completion: { (success) in
+                            if(success)
+                            {
+                                print(UserDataService.instance.name,UserDataService.instance.email)
+                                self.performSegue(withIdentifier: uniwind, sender: nil)
+                            }
+                        })
                     }
                 })
             }
