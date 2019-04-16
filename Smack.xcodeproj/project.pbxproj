@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0908AA2D22647A990057F17D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908AA2C22647A990057F17D /* AuthService.swift */; };
 		097E78C1225E3D810052AED6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 097E78C0225E3D810052AED6 /* SWRevealViewController.m */; };
 		097E78C6225E40070052AED6 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097E78C5225E40070052AED6 /* ChatVC.swift */; };
 		097E78C8225E40200052AED6 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097E78C7225E40200052AED6 /* ChannelVC.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0908AA2C22647A990057F17D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		097E78BE225E3D800052AED6 /* Smack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smack-Bridging-Header.h"; sourceTree = "<group>"; };
 		097E78BF225E3D810052AED6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		097E78C0225E3D810052AED6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0908AA2B22647A660057F17D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0908AA2C22647A990057F17D /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		097E78BD225E3D510052AED6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +124,7 @@
 		09984A58225E10D00070CF6E /* Smack */ = {
 			isa = PBXGroup;
 			children = (
+				0908AA2B22647A660057F17D /* Services */,
 				09FE2D97225F9E9100B0C055 /* Utilities */,
 				097E78C4225E3FC70052AED6 /* Model */,
 				097E78C3225E3FC00052AED6 /* View */,
@@ -287,6 +298,7 @@
 				09984A5A225E10D00070CF6E /* AppDelegate.swift in Sources */,
 				09FE2D9F225FB8CE00B0C055 /* AddAccountVC.swift in Sources */,
 				097E78CA225E455D0052AED6 /* Gradientview.swift in Sources */,
+				0908AA2D22647A990057F17D /* AuthService.swift in Sources */,
 				097E78C1225E3D810052AED6 /* SWRevealViewController.m in Sources */,
 				09FE2D99225F9EB000B0C055 /* Constants.swift in Sources */,
 			);

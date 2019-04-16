@@ -8,7 +8,24 @@
 
 import Foundation
 
+typealias CompilationHandler = (_ Succsess : Bool)->()
+
 //segue values
 
 var to_login:String = "tologin"
 var create_account:String = "showcreateaccount"
+var uniwind:String = "uniwind"
+
+
+
+// user defualts
+
+let LOGGED_IN_KEY = "loggedin"
+let TOKEN_KEY = "token"
+let USER_MAIL = "userem"
+
+// urls Constants
+
+let base_url = "http://localhost:3005/v1/"
+let url_register = "\(base_url)/account/register"
+

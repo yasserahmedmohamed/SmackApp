@@ -18,7 +18,7 @@ class AddAccountVC: UIViewController {
     
 
     @IBAction func CancelAddAccountTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+       performSegue(withIdentifier: uniwind, sender: nil)
     }
     
 }
