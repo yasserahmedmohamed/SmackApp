@@ -26,6 +26,11 @@ let USER_MAIL = "userem"
 
 // urls Constants
 
-let base_url = "http://localhost:3005/v1/"
+let base_url = "http://localhost:3005/v1"
 let url_register = "\(base_url)/account/register"
+let url_login = "\(base_url)/account/login"
 
+// headers
+let HEADER = [
+    "Content-Type" : "application/json; charset=utf-8"
+]

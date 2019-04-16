@@ -8,11 +8,26 @@
 
 import UIKit
 
+@IBDesignable
 class CornerButton: UIButton {
 
+    @IBInspectable var corner :CGFloat = 5.0 {
+        didSet{
+           self.layer.cornerRadius = corner
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        layer.cornerRadius = 5
+       setupView()
     }
 
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setupView()
+    }
+    func setupView(){
+        layer.cornerRadius = corner
+        
+    }
 }
