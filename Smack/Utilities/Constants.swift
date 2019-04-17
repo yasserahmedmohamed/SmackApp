@@ -15,7 +15,7 @@ typealias CompilationHandler = (_ Succsess : Bool)->()
 var to_login:String = "tologin"
 var create_account:String = "showcreateaccount"
 var uniwind:String = "uniwind"
-
+var to_avatar_piker = "toavatarpiker"
 
 
 // user defualts

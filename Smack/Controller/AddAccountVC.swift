@@ -25,6 +25,12 @@ class AddAccountVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDataService.instance.avatarName != ""{
+            UserImg.image = UIImage(named: UserDataService.instance.avatarName)
+            avatarname = UserDataService.instance.avatarName
+        }
+    }
 
     @IBAction func CancelAddAccountTapped(_ sender: Any) {
        performSegue(withIdentifier: uniwind, sender: nil)
@@ -66,6 +72,7 @@ class AddAccountVC: UIViewController {
     }
    
     @IBAction func ChooseAvatarTapped(_ sender: Any) {
+        performSegue(withIdentifier: to_avatar_piker, sender: nil)
     }
     
     @IBAction func GenerateBackgroundtapped(_ sender: Any) {
