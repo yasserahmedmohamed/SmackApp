@@ -10,7 +10,9 @@ import UIKit
 
 class ChannelVC: UIViewController {
 
+    @IBOutlet weak var loginbutton: UIButton!
     
+    @IBOutlet weak var userimage: CircleImage!
     @IBAction func prepareforwind(segue : UIStoryboardSegue)
     {
         
@@ -19,6 +21,7 @@ class ChannelVC: UIViewController {
         super.viewDidLoad()
 
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.size.width - 60
+        NotificationCenter.default.addObserver(self, selector: #selector( ChannelVC.userdatadidchanged(_notif:)), name: notify_user_data_did_changed, object: nil)
     }
     
 
@@ -26,6 +29,18 @@ class ChannelVC: UIViewController {
     @IBAction func LoginButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: to_login, sender: nil)
     }
-    
+  @objc  func userdatadidchanged(_notif : Notification)
+    {
+        if AuthService.instance.isloggedin {
+            loginbutton.setTitle(UserDataService.instance.name, for: .normal)
+            userimage.image = UIImage.init(named: UserDataService.instance.avatarName)
+            userimage.backgroundColor = UserDataService.instance.getavatarColor(components: UserDataService.instance.avatarColor)
+        }
+        else{
+            loginbutton.setTitle("Login", for: .normal)
+            userimage.image = UIImage.init(named: "menuProfileIcon")
+            userimage.backgroundColor = UIColor.clear
+        }
+    }
     
 }

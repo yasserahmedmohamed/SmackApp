@@ -30,7 +30,42 @@ class UserDataService{
     {
         self.avatarName = name
     }
+    func setavatarColor(forAvColor color : String)  {
+        self.avatarColor = color
+    }
+    
+    func getavatarColor(components : String ) -> UIColor {
+        let scanner = Scanner(string: components)
+        let skiped  = CharacterSet(charactersIn: "[], ")
+        let comma = CharacterSet(charactersIn: ",")
+        scanner.charactersToBeSkipped = skiped
+        var r , g , b , a : NSString?
+        
+        scanner.scanUpToCharacters(from: comma, into: &r)
+        scanner.scanUpToCharacters(from: comma, into: &g)
+        scanner.scanUpToCharacters(from: comma, into: &b)
+        scanner.scanUpToCharacters(from: comma, into: &a)
 
+        let defultcol = UIColor.lightGray
+        guard let Rwrapd = r else {
+            return defultcol
+        }
+        guard let Gwrapd = g else {
+            return defultcol
+        }
+        guard let Bwrapd = b else {
+            return defultcol
+        }
+        guard let Awrapd = a else {
+            return defultcol
+        }
+        let rfloat = CGFloat(Rwrapd.doubleValue)
+        let gfloat = CGFloat(Gwrapd.doubleValue)
+        let bfloat = CGFloat(Bwrapd.doubleValue)
+        let afloat = CGFloat(Awrapd.doubleValue)
+
+        return UIColor(red: rfloat, green: gfloat, blue: bfloat, alpha: afloat)
+    }
     
     
 }

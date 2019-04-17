@@ -105,6 +105,8 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="loginbutton" destination="ArZ-2F-g2f" id="fxr-XT-cMd"/>
+                        <outlet property="userimage" destination="Gyb-O3-0yr" id="4kG-9A-9ET"/>
                         <segue destination="OxK-FX-Qtd" kind="show" identifier="tologin" id="8Bk-pl-Tf2"/>
                     </connections>
                 </viewController>

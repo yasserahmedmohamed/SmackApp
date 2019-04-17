@@ -103,7 +103,8 @@ setupview()
         let r = CGFloat( arc4random_uniform(255)) / 255
         let g = CGFloat( arc4random_uniform(255)) / 255
         let b = CGFloat( arc4random_uniform(255)) / 255
-
+        avatarcolor = "[\(r),\(g),\(b),1]"
+        UserDataService.instance.setavatarColor(forAvColor: avatarcolor)
         bgcolor = UIColor(red: r, green: g, blue: b, alpha: 1)
         UIView.animate(withDuration: 0.2)
         {
@@ -119,6 +120,7 @@ setupview()
         Emailtxt.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor : smackpurbleColor ])
         let tap = UITapGestureRecognizer(target: self, action: #selector         (AddAccountVC.handletap))
         view.addGestureRecognizer(tap)
+        
     }
    @objc func handletap(){
         view.endEditing(true)
