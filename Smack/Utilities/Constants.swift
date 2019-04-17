@@ -34,3 +34,12 @@ let url_user_add = "\(base_url)/user/add"
 let HEADER = [
     "Content-Type" : "application/json; charset=utf-8"
 ]
+
+
+// colors
+
+let smackpurbleColor = #colorLiteral(red: 0.3254901961, green: 0.4196078431, blue: 0.7764705882, alpha: 0.5)
+
+// notifications
+
+let notify_user_data_did_changed = Notification.Name("notifUserDataChanged")
