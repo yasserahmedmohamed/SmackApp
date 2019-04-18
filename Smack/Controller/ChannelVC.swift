@@ -27,7 +27,14 @@ class ChannelVC: UIViewController {
 
     
     @IBAction func LoginButtonTapped(_ sender: Any) {
+        if AuthService.instance.isloggedin {
+            let profile = ProfileVC()
+            profile.modalPresentationStyle = .custom
+            present(profile , animated : true ,completion: nil)
+        }
+        else{
         performSegue(withIdentifier: to_login, sender: nil)
+        }
     }
   @objc  func userdatadidchanged(_notif : Notification)
     {
