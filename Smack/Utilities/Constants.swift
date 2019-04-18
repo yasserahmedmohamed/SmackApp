@@ -30,11 +30,15 @@ let base_url = "http://localhost:3005/v1"
 let url_register = "\(base_url)/account/register"
 let url_login = "\(base_url)/account/login"
 let url_user_add = "\(base_url)/user/add"
+let url_findUser_by_email = "\(base_url)/user/byEmail/"
+
 // headers
 let HEADER = [
     "Content-Type" : "application/json; charset=utf-8"
 ]
-
+let Berrer_header = [
+    "Authorization": "Bearer \(AuthService.instance.authtoken)",
+    "Content-Type" : "application/json; charset=utf-8"]
 
 // colors
 

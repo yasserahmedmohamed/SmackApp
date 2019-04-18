@@ -55,7 +55,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="yasser@smack.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQO-62-XGf">
-                            <rect key="frame" x="101.5" y="215" width="152.5" height="20.5"/>
+                            <rect key="frame" x="131.5" y="215" width="152.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.24275922059999999" green="0.30196078430000001" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -63,7 +63,7 @@
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
                             </variation>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="i2q-QE-YRX">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="i2q-QE-YRX" customClass="CircleImage" customModule="Smack" customModuleProvider="target">
                             <rect key="frame" x="121.5" y="81.5" width="100" height="100"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="134" id="Byu-4k-h6r"/>
@@ -87,7 +87,7 @@
                             </variation>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YAsser Ahmed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsw-rQ-aHa">
-                            <rect key="frame" x="121.5" y="186.5" width="112" height="20.5"/>
+                            <rect key="frame" x="131.5" y="186.5" width="112" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.24275922059999999" green="0.30196078430000001" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -120,9 +120,9 @@
                         <constraint firstItem="i2q-QE-YRX" firstAttribute="top" secondItem="Gqs-sf-1YI" secondAttribute="bottom" constant="53.5" id="XOh-DB-4Fs"/>
                         <constraint firstItem="i2q-QE-YRX" firstAttribute="centerX" secondItem="9He-Bn-qke" secondAttribute="centerX" id="YjQ-6y-3Ta"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="ZF3-Wc-DOE"/>
-                        <constraint firstItem="Tsw-rQ-aHa" firstAttribute="leading" secondItem="i2q-QE-YRX" secondAttribute="leading" id="dRy-pP-EQX"/>
+                        <constraint firstItem="Tsw-rQ-aHa" firstAttribute="leading" secondItem="i2q-QE-YRX" secondAttribute="leading" constant="10" id="dRy-pP-EQX"/>
                         <constraint firstAttribute="bottom" secondItem="i2q-QE-YRX" secondAttribute="bottom" constant="68" id="e6F-oX-aAF"/>
-                        <constraint firstItem="OQO-62-XGf" firstAttribute="leading" secondItem="Tsw-rQ-aHa" secondAttribute="leading" constant="-20" id="mPM-Um-XCu"/>
+                        <constraint firstItem="OQO-62-XGf" firstAttribute="leading" secondItem="Tsw-rQ-aHa" secondAttribute="leading" id="mPM-Um-XCu"/>
                         <constraint firstItem="Tsw-rQ-aHa" firstAttribute="top" secondItem="i2q-QE-YRX" secondAttribute="bottom" constant="5" id="uuQ-Fx-OH8"/>
                         <constraint firstItem="i2q-QE-YRX" firstAttribute="leading" secondItem="9He-Bn-qke" secondAttribute="leading" constant="20" id="ziU-bZ-yTk"/>
                     </constraints>

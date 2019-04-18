@@ -23,7 +23,9 @@ class ChannelVC: UIViewController {
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.size.width - 60
         NotificationCenter.default.addObserver(self, selector: #selector( ChannelVC.userdatadidchanged(_notif:)), name: notify_user_data_did_changed, object: nil)
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        setupuserINFO()
+    }
 
     
     @IBAction func LoginButtonTapped(_ sender: Any) {
@@ -38,6 +40,11 @@ class ChannelVC: UIViewController {
     }
   @objc  func userdatadidchanged(_notif : Notification)
     {
+       let stat =  _notif.object as? String
+        setupuserINFO()
+    }
+    
+    func setupuserINFO(){
         if AuthService.instance.isloggedin {
             loginbutton.setTitle(UserDataService.instance.name, for: .normal)
             userimage.image = UIImage.init(named: UserDataService.instance.avatarName)
@@ -49,5 +56,4 @@ class ChannelVC: UIViewController {
             userimage.backgroundColor = UIColor.clear
         }
     }
-    
 }
