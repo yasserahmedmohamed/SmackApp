@@ -31,7 +31,7 @@ let url_register = "\(base_url)/account/register"
 let url_login = "\(base_url)/account/login"
 let url_user_add = "\(base_url)/user/add"
 let url_findUser_by_email = "\(base_url)/user/byEmail/"
-
+let url_channels = "\(base_url)/channel"
 // headers
 let HEADER = [
     "Content-Type" : "application/json; charset=utf-8"

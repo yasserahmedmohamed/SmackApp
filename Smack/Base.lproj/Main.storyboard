@@ -61,6 +61,9 @@
                                 <state key="normal" image="addChannelButton">
                                     <color key="titleColor" cyan="0.0" magenta="0.0002035424113" yellow="4.4323860489999998e-06" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="AddChannelTapped:" destination="2kM-0k-u4B" eventType="touchUpInside" id="Xcq-ff-whb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ArZ-2F-g2f">
                                 <rect key="frame" x="146" y="585" width="46" height="33"/>
@@ -72,9 +75,35 @@
                                     <action selector="LoginButtonTapped:" destination="2kM-0k-u4B" eventType="touchUpInside" id="8UZ-a1-lWB"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="it4-wk-O0A">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="it4-wk-O0A">
                                 <rect key="frame" x="0.0" y="110.5" width="375" height="422.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="channellCell" rowHeight="65" id="Ba3-1W-4w3" customClass="ChannelCell" customModule="Smack" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ba3-1W-4w3" id="Qrx-6o-8Im">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgc-yq-DYY">
+                                                    <rect key="frame" x="28" y="21" width="59.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dgc-yq-DYY" firstAttribute="top" secondItem="Qrx-6o-8Im" secondAttribute="topMargin" constant="10" id="ek8-K2-lSg"/>
+                                                <constraint firstItem="dgc-yq-DYY" firstAttribute="leading" secondItem="Qrx-6o-8Im" secondAttribute="leadingMargin" constant="13" id="xK6-On-nOh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="Channelname" destination="dgc-yq-DYY" id="G8o-MV-8iU"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -105,6 +134,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="ChannelltableView" destination="it4-wk-O0A" id="rVV-5t-7n1"/>
                         <outlet property="loginbutton" destination="ArZ-2F-g2f" id="fxr-XT-cMd"/>
                         <outlet property="userimage" destination="Gyb-O3-0yr" id="4kG-9A-9ET"/>
                         <segue destination="OxK-FX-Qtd" kind="show" identifier="tologin" id="8Bk-pl-Tf2"/>

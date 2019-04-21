@@ -8,8 +8,27 @@
 
 import UIKit
 
-class ChannelVC: UIViewController {
+class ChannelVC: UIViewController ,UITableViewDelegate , UITableViewDataSource{
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      return  MessageService.instance.channels.count
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "channellCell") as? ChannelCell{
+            cell.setcellView(channel:MessageService.instance.channels[indexPath.row] )
+            return cell
+        }
+        else
+        {
+            return UITableViewCell()
+        }
+    }
+    
 
+    @IBOutlet weak var ChannelltableView: UITableView!
     @IBOutlet weak var loginbutton: UIButton!
     
     @IBOutlet weak var userimage: CircleImage!
@@ -19,9 +38,17 @@ class ChannelVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+      
+ChannelltableView.dataSource = self
+        ChannelltableView.delegate = self
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.size.width - 60
         NotificationCenter.default.addObserver(self, selector: #selector( ChannelVC.userdatadidchanged(_notif:)), name: notify_user_data_did_changed, object: nil)
+        
+        SoketService.instance.getChannel { (success) in
+            if success{
+                self.ChannelltableView.reloadData()
+            }
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
         setupuserINFO()
@@ -40,7 +67,7 @@ class ChannelVC: UIViewController {
     }
   @objc  func userdatadidchanged(_notif : Notification)
     {
-       let stat =  _notif.object as? String
+      // let stat =  _notif.object as? String
         setupuserINFO()
     }
     
@@ -56,4 +83,11 @@ class ChannelVC: UIViewController {
             userimage.backgroundColor = UIColor.clear
         }
     }
+    
+    @IBAction func AddChannelTapped(_ sender: Any) {
+        let addchannel = AddChannelVC()
+        addchannel.modalPresentationStyle = .custom
+        present(addchannel,animated: true)
+    }
+    
 }
