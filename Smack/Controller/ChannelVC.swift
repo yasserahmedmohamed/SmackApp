@@ -43,9 +43,17 @@ ChannelltableView.dataSource = self
         ChannelltableView.delegate = self
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.size.width - 60
         NotificationCenter.default.addObserver(self, selector: #selector( ChannelVC.userdatadidchanged(_notif:)), name: notify_user_data_did_changed, object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelLoaded(_notif:)), name: notify_channels_loaded, object: nil)
         SoketService.instance.getChannel { (success) in
             if success{
+                self.ChannelltableView.reloadData()
+            }
+        }
+        SoketService.instance.getchatMessage { (message) in
+            if message.channelid != MessageService.instance.selectedChannel?._id &&
+                AuthService.instance.isloggedin
+            {
+                MessageService.instance.UnreadMessages.append(message.channelid)
                 self.ChannelltableView.reloadData()
             }
         }
@@ -70,6 +78,10 @@ ChannelltableView.dataSource = self
       // let stat =  _notif.object as? String
         setupuserINFO()
     }
+    @objc func channelLoaded(_notif : Notification)
+    {
+        ChannelltableView.reloadData()
+    }
     
     func setupuserINFO(){
         if AuthService.instance.isloggedin {
@@ -81,13 +93,21 @@ ChannelltableView.dataSource = self
             loginbutton.setTitle("Login", for: .normal)
             userimage.image = UIImage.init(named: "menuProfileIcon")
             userimage.backgroundColor = UIColor.clear
+            ChannelltableView.reloadData()
         }
     }
     
     @IBAction func AddChannelTapped(_ sender: Any) {
+        if AuthService.instance.isloggedin{
         let addchannel = AddChannelVC()
         addchannel.modalPresentationStyle = .custom
         present(addchannel,animated: true)
+        }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        MessageService.instance.selectedChannel = MessageService.instance.channels[indexPath.item]
+        NotificationCenter.default.post(name: notify_channels_selected, object: nil)
+        self.revealViewController()?.revealToggle(animated: true)
+    }
 }

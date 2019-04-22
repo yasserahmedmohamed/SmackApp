@@ -43,4 +43,38 @@ class SoketService: NSObject {
             complition(true)
         }
     }
+    func addMessage(messageBody : String , userId : String , channelId : String, complition : @escaping CompilationHandler)
+    {
+        let user = UserDataService.instance
+        socet.emit("newMessage", messageBody,userId ,channelId ,user.name, user.avatarName ,user.avatarColor)
+        complition(true)
+    }
+    
+    func getchatMessage(complition : @escaping (_ message : Message)-> Void)
+    {
+        socet.on("messageCreated") { (dataArray, ack) in
+            guard let msgbody = dataArray[0] as? String else {return}
+            guard let channelID = dataArray[2] as? String else {return}
+            guard let username = dataArray[3] as? String else {return}
+            guard let useravatar = dataArray[4] as? String else {return}
+            guard let useravatarColor = dataArray[5] as? String else {return}
+            guard let id = dataArray[6] as? String else {return}
+            guard let timestamp = dataArray[7] as? String else {return}
+            
+                let message = Message(message: msgbody, username: username, channelid: channelID, userAvatar: useravatar, useravatarColor: useravatarColor, id: id, timestamp: timestamp)
+               // MessageService.instance.messages.append(message)
+                complition(message)
+            
+           
+
+        }
+    }
+    
+    func gettypingUsers(_ Complition : @escaping(_ typingUsers : [String : String])->Void){
+        socet.on("userTypingUpdate") { (dataArray, ack) in
+            guard let typingUsers = dataArray[0] as? [String : String] else {return}
+            Complition(typingUsers)
+        }
+    }
+    
 }

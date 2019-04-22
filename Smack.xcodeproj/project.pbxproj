@@ -20,6 +20,9 @@
 		097158E8226C624400D1D36A /* AddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097158E6226C624400D1D36A /* AddChannelVC.swift */; };
 		097158E9226C624400D1D36A /* AddChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097158E7226C624400D1D36A /* AddChannelVC.xib */; };
 		097158EB226C827E00D1D36A /* SoketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097158EA226C827E00D1D36A /* SoketService.swift */; };
+		097158ED226CA3A700D1D36A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097158EC226CA3A700D1D36A /* Message.swift */; };
+		097158EF226CAD8C00D1D36A /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097158EE226CAD8C00D1D36A /* KeyboardBoundView.swift */; };
+		097158F1226CB6BD00D1D36A /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097158F0226CB6BD00D1D36A /* MessageCell.swift */; };
 		097E78C1225E3D810052AED6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 097E78C0225E3D810052AED6 /* SWRevealViewController.m */; };
 		097E78C6225E40070052AED6 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097E78C5225E40070052AED6 /* ChatVC.swift */; };
 		097E78C8225E40200052AED6 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097E78C7225E40200052AED6 /* ChannelVC.swift */; };
@@ -49,6 +52,9 @@
 		097158E6226C624400D1D36A /* AddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelVC.swift; sourceTree = "<group>"; };
 		097158E7226C624400D1D36A /* AddChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelVC.xib; sourceTree = "<group>"; };
 		097158EA226C827E00D1D36A /* SoketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoketService.swift; sourceTree = "<group>"; };
+		097158EC226CA3A700D1D36A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		097158EE226CAD8C00D1D36A /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
+		097158F0226CB6BD00D1D36A /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		097E78BE225E3D800052AED6 /* Smack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smack-Bridging-Header.h"; sourceTree = "<group>"; };
 		097E78BF225E3D810052AED6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		097E78C0225E3D810052AED6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -129,11 +135,13 @@
 		097E78C3225E3FC00052AED6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				097158EE226CAD8C00D1D36A /* KeyboardBoundView.swift */,
 				097E78C9225E455D0052AED6 /* Gradientview.swift */,
 				09FE2D9A225FAB8B00B0C055 /* CornerButton.swift */,
 				097158D722672BF500D1D36A /* AvatarCell.swift */,
 				097158D92267417100D1D36A /* CircleImage.swift */,
 				097158E42268CB2900D1D36A /* ChannelCell.swift */,
+				097158F0226CB6BD00D1D36A /* MessageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -142,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				097158E22268BDFD00D1D36A /* Channel.swift */,
+				097158EC226CA3A700D1D36A /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,12 +346,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				097158EF226CAD8C00D1D36A /* KeyboardBoundView.swift in Sources */,
 				097158DD22675B1800D1D36A /* ProfileVC.swift in Sources */,
 				097158E52268CB2900D1D36A /* ChannelCell.swift in Sources */,
 				09FE2D9B225FAB8B00B0C055 /* CornerButton.swift in Sources */,
 				097158E12268BDCD00D1D36A /* MessageSevice.swift in Sources */,
 				097E78C8225E40200052AED6 /* ChannelVC.swift in Sources */,
+				097158F1226CB6BD00D1D36A /* MessageCell.swift in Sources */,
 				097158E32268BDFD00D1D36A /* Channel.swift in Sources */,
+				097158ED226CA3A700D1D36A /* Message.swift in Sources */,
 				09FE2D9D225FADB300B0C055 /* LoginVC.swift in Sources */,
 				097158DA2267417100D1D36A /* CircleImage.swift in Sources */,
 				0903B8EA22660BFF00ABA3BA /* UserDataService.swift in Sources */,
